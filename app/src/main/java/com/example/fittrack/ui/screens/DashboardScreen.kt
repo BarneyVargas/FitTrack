@@ -29,6 +29,10 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -51,11 +55,13 @@ fun DashboardScreen(
     onClearHistory: () -> Unit,
     onDismissDialog: () -> Unit,
 ) {
+    var showClearHistoryDialog by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = { TopAppBar(title = { Text("FitTrack") }) },
         bottomBar = {
             Button(
-                onClick = onClearHistory,
+                onClick = { showClearHistoryDialog = true },
                 enabled = uiState.history.isNotEmpty(),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -66,7 +72,7 @@ fun DashboardScreen(
                     contentColor = MaterialTheme.colorScheme.onError,
                 ),
             ) {
-                Text("Clear")
+                Text("Clear all")
             }
         },
     ) { padding ->
@@ -110,6 +116,29 @@ fun DashboardScreen(
                 }
             }
         }
+    }
+
+    if (showClearHistoryDialog) {
+        AlertDialog(
+            onDismissRequest = { showClearHistoryDialog = false },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        onClearHistory()
+                        showClearHistoryDialog = false
+                    },
+                ) {
+                    Text("Clear all")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showClearHistoryDialog = false }) {
+                    Text("Cancel")
+                }
+            },
+            title = { Text("Clear workout history?") },
+            text = { Text("This will permanently remove all logged workouts.") },
+        )
     }
 
     if (uiState.showSuccessDialog) {

@@ -1,8 +1,0 @@
-com.example.fittrack.app-pngs-0 /Users/barneyvargas/Coding/Cursor/app/build/generated/res/pngs/debug
-com.example.fittrack.app-updated_navigation_xml-1 /Users/barneyvargas/Coding/Cursor/app/build/generated/updated_navigation_xml/debug
-com.example.fittrack.app-packageDebugResources-2 /Users/barneyvargas/Coding/Cursor/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.example.fittrack.app-packageDebugResources-3 /Users/barneyvargas/Coding/Cursor/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.example.fittrack.app-debug-4 /Users/barneyvargas/Coding/Cursor/app/build/intermediates/merged_res/debug/mergeDebugResources
-com.example.fittrack.app-debug-5 /Users/barneyvargas/Coding/Cursor/app/src/debug/res
-com.example.fittrack.app-main-6 /Users/barneyvargas/Coding/Cursor/app/src/main/res
-gradleHome-0 /Users/barneyvargas/.gradle

@@ -1,6 +1,6 @@
 # FitTrack
 
-Android workout logger built with Jetpack Compose. Browse exercise categories, log session duration, and keep a running history on one shared dashboard.
+Android workout logger built with Jetpack Compose. Browse exercise categories, log session duration, and review your workout history from one shared dashboard.
 
 ## Features
 
@@ -9,7 +9,8 @@ Android workout logger built with Jetpack Compose. Browse exercise categories, l
 - Duration validation with live error feedback
 - Success dialog after logging a workout
 - Swipe left on a history item to remove it
-- Clear button to wipe the full history
+- Clear button with confirmation to wipe the full history
+- Session-only history (logs reset when the app process is recreated)
 
 ## Screens
 
@@ -31,7 +32,8 @@ Android workout logger built with Jetpack Compose. Browse exercise categories, l
 
 - Android Studio
 - JDK 17
-- minSdk 26
+- Android SDK with `compileSdk 37`
+- Android 8.0 (API 26) or later device/emulator (`minSdk 26`)
 
 ## Run
 
@@ -41,3 +43,4 @@ Android workout logger built with Jetpack Compose. Browse exercise categories, l
 
 ```bash
 ./gradlew :app:assembleDebug
+```
